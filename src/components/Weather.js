@@ -11,7 +11,7 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 	const { feels_like, humidity, pressure, temp, temp_max, temp_min } = {
 		...temps,
 	};
-	const { sunrise, sunset } = weather.sys;
+	const { sunrise, sunset } = { ...weather.sys };
 	const newSunset = formatDate(sunset);
 	const newSunrise = formatDate(sunrise);
 
