@@ -6,7 +6,6 @@ import Weather from './components/Weather';
 
 function App() {
 	// gsap.from('.h1', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
-	gsap.from('#sun', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
 	// const WeatherLoading = LoadingWeather(Weather);
 	const [weather, setWeather] = useState({});
 	const [city, setCity] = useState('Seoul');
@@ -27,6 +26,8 @@ function App() {
 		setSearch('');
 	};
 	useEffect(() => {
+		gsap.from('#sun', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
+
 		document.getElementById('input').focus();
 
 		const getWeather = async () => {
