@@ -31,8 +31,9 @@ html {
 }
 
 .light {
-	--text-primary: #b2becf;
-	--text-day: #000000;
+	--text-primary: #426696;
+
+	--text-secondary: #658ec6;
 	--bg-primary: linear-gradient(to right top, #65dfc9, #6cdbeb);
 	--bg-secondary: rgb(4, 184, 255);
 }
@@ -80,6 +81,12 @@ h3 {
 	color: #426696;
 	font-weight: 600;
 	opacity: 0.8;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
 }
 .glass {
 	background: white;
@@ -205,8 +212,8 @@ main {
 	}
 	.link img {
 		position: relative;
-		top: -50%;
-		left: 10%;
+		top: -8%;
+		left: 8%;
 		z-index: -1;
 		width: 60%;
 	}
@@ -398,8 +405,8 @@ main {
 }
 img {
 	position: absolute;
-	top: -21%;
-	left: -10%;
+	top: -25%;
+	left: -2%;
 	z-index: -1;
 	width: 60%;
 }
@@ -441,13 +448,13 @@ button {
 	font-style: normal;
 	font-weight: 700;
 	color: #426696;
-	background-color: transparent;
+	/* background-color: transparent; */
 	text-transform: uppercase;
 	font-size: 0.66rem;
-	border: 2px solid var(--bg-primary);
+	border: 1px solid #426696;
 	border-radius: 50px;
 	padding: 0.75rem 3rem;
-	border-color: var(--text-secondary);
+	/* border-color: var(--bg-secondary); */
 	cursor: pointer;
 	margin: 1rem;
 }
@@ -455,10 +462,9 @@ button {
 button:hover {
 	text-shadow: none;
 	color: #426696;
-	-webkit-background-clip: text;
-	-webkit-box-decoration-break: clone;
-	background-clip: text;
-	color: #426696;
+	/* -webkit-background-clip: text;
+	-webkit-box-decoration-break: clone; */
+	/* background-clip: text; */
 	cursor: pointer;
 	border: 1px solid #426696;
 }
