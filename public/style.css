@@ -216,8 +216,8 @@ main {
 	}
 	img {
 		position: absolute;
-		top: -15%;
-		left: 15%;
+		top: -10%;
+		left: -50%;
 		z-index: -1;
 		width: 60%;
 	}
@@ -420,14 +420,14 @@ img {
 	font-weight: 600;
 }
 form {
-	width: 100%;
+	width: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
 
-label {
+/* label {
 	color: #426696;
 	display: inline-block;
 	margin: 25px 0 15px;
@@ -435,18 +435,17 @@ label {
 	font-weight: bold;
 	letter-spacing: 1px;
 	width: 100%;
-}
+} */
 input {
 	display: block;
-	padding: 10px 6px;
+	/* padding: 10px 6px; */
 	box-sizing: border-box;
 	border: none;
 	color: #426696;
-
 	width: 100%;
-	background: #ffffff02;
-	margin-bottom: 10px;
-	border-bottom: 1px solid #426696;
+	/* background: #ffffff02; */
+	/* margin-bottom: 10px; */
+	/* border-bottom: 1px solid #426696; */
 }
 button {
 	font-style: normal;

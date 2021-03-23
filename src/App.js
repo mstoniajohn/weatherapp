@@ -8,7 +8,7 @@ function App() {
 	// gsap.from('.h1', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
 	// const WeatherLoading = LoadingWeather(Weather);
 	const [weather, setWeather] = useState({});
-	const [city, setCity] = useState('Seoul');
+	const [city, setCity] = useState('New York');
 	const [degree, setDegree] = useState(true);
 	const [search, setSearch] = useState('');
 
@@ -169,9 +169,9 @@ function App() {
 
 					<div className="games">
 						<div className="form-cards">
-							<p className="center" style={{ marginBottom: '1rem' }}>
+							<h3 className="center" style={{ margin: '0.5rem' }}>
 								Search a city to get the weather.
-							</p>
+							</h3>
 
 							<form onSubmit={getSearch}>
 								<input
@@ -179,6 +179,7 @@ function App() {
 									type="text"
 									value={search}
 									onChange={updateSearch}
+									placeholder="New York"
 								/>
 								<button className="btn">Search</button>
 							</form>

@@ -27,9 +27,6 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 					<h3 className="center">{city} Forecast</h3>
 
 					<div className="center">
-						<h2 className="temps">
-							{kelvinToFahrenheit(temp).toFixed(0)} &#730;
-						</h2>
 						{/* <h4 className="center">
 							{weather.weather[0].description && weather.weather[0].description}
 						</h4> */}
@@ -37,52 +34,61 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 						<h4 className="center">
 							{description ? description[0].main : 'loading'}
 						</h4>
-					</div>
-					<div className="center">
-						<p>
-							<small>Feels like</small>
-						</p>
-						<h4 className="temps">
-							{kelvinToFahrenheit(feels_like).toFixed(0)} &#730;
-						</h4>
-					</div>
-					<div className="grid">
-						<div>
+						<h1 className="temps">
+							{kelvinToFahrenheit(temp).toFixed(0)} &#730;
+						</h1>
+						<div className="grid">
 							<p>
-								<small>High</small>
+								<small>High: </small>
+								<span className="temps">
+									{kelvinToFahrenheit(temp_max).toFixed(0)} &#730;{' '}
+								</span>{' '}
 							</p>
-							<p className="temps">
-								{kelvinToFahrenheit(temp_max).toFixed(0)} &#730;
-							</p>
-						</div>
-						<div>
 							<p>
-								<small>Low</small>
+								{' '}
+								<small>Low: </small>
+								<span className="temps">
+									{kelvinToFahrenheit(temp_min).toFixed(0)} &#730;
+								</span>
 							</p>
 
-							<p className="temps">
-								{kelvinToFahrenheit(temp_min).toFixed(0)} &#730;
+							<p>
+								<small>Feels like: </small>
+								<span className="temps">
+									{kelvinToFahrenheit(feels_like).toFixed(0)} &#730;
+								</span>
 							</p>
 						</div>
-					</div>
-					<div className="grid">
-						<div>
-							<p>Sunrise</p>
-							<p className="temps">{newSunset}</p>
-						</div>
-						<div>
-							<p>Sunset</p>
-							<p className="temps">{newSunrise}</p>
-						</div>
-					</div>
 
-					<div>
-						<p className="hide">
-							{humidity} {pressure}
-						</p>
 						<p className="center">
-							Winds {degree} {wind?.toFixed(0)} mph
+							Winds{' '}
+							<span className="temps">
+								{degree} {wind?.toFixed(0)}
+							</span>{' '}
+							mph
 						</p>
+
+						<div className="grid">
+							<p>
+								Humidity:
+								<span className="temps"> {humidity}</span>
+							</p>
+							<p>
+								{' '}
+								Pressure:
+								<span className="temps"> {pressure}</span>
+							</p>
+						</div>
+						<div className="grid">
+							<div className="center">
+								<p>Sunrise</p>
+								<p className="temps">{newSunrise}</p>
+							</div>
+							<div className="center">
+								<p>Sunset</p>
+								<p className="temps">{newSunset}</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
