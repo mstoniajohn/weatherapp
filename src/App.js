@@ -163,9 +163,7 @@ function App() {
 								alt=""
 							/>
 						</div>
-						<div>
-							{weather ? <p>{weather.name}</p> : 'loading'} {degree}
-						</div>
+						<div>{weather ? <p>{weather.name}</p> : 'loading'}</div>
 					</div>
 
 					<div className="games">
@@ -189,6 +187,7 @@ function App() {
 							temps={weather.main}
 							weather={weather}
 							wind={weather.wind?.speed}
+							degree={degree}
 						/>
 					</div>
 				</div>
