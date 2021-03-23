@@ -104,7 +104,7 @@ function App() {
 			.then((data) => {
 				// console.log(data);
 				if (data.formatted) {
-					const [x, curTime] = data.formatted.split(' ');
+					const [, curTime] = data.formatted.split(' ');
 
 					let s = Number(curTime.split(':')[0]);
 					console.log(data, s, curTime);

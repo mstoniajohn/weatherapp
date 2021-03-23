@@ -22,6 +22,9 @@ const Weather = ({ weather, wind, temps, city }) => {
 						</h2>
 						{/* <h4 className="center">${weather.weather[0]?.description}</h4> */}
 					</div>
+					<div>
+						{feels_like} {humidity} {pressure} {temp_max} {temp_min}
+					</div>
 
 					<div>
 						<p>{wind}</p>
