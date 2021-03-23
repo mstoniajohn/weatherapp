@@ -68,12 +68,11 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 					<div className="grid">
 						<div>
 							<p>Sunrise</p>
-							<p className="temps">{newSunrise}</p>
+							<p className="temps">{newSunset}</p>
 						</div>
-
 						<div>
 							<p>Sunset</p>
-							<p className="temps">{newSunset}</p>
+							<p className="temps">{newSunrise}</p>
 						</div>
 					</div>
 
