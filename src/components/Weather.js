@@ -29,7 +29,7 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 						<h2 className="temps">
 							{kelvinToFahrenheit(temp).toFixed(0)} &#730;
 						</h2>
-						<h4 className="center">{weather.weather[0]?.descriptione}</h4>
+						<h4 className="center">{weather?.weather[0]?.descriptione}</h4>
 
 						{/* <h4 className="center">${weather.weather[0]?.description}</h4> */}
 					</div>
