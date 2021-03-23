@@ -1,7 +1,7 @@
 import React from 'react';
 
 // const names = ['no', 'yes', 'this', 'is', 'cool'];
-const Weather = ({ weather, wind, temps, city, degree }) => {
+const Weather = ({ weather, wind, temps, city, degree, description }) => {
 	// const { bitcoin } = props;
 	const formatDate = function (timestamp) {
 		let date = new Date(timestamp * 1000);
@@ -11,6 +11,7 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 	const { feels_like, humidity, pressure, temp, temp_max, temp_min } = {
 		...temps,
 	};
+
 	const { sunrise, sunset } = { ...weather.sys };
 	const newSunset = formatDate(sunset);
 	const newSunrise = formatDate(sunrise);
@@ -29,9 +30,13 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 						<h2 className="temps">
 							{kelvinToFahrenheit(temp).toFixed(0)} &#730;
 						</h2>
-						<h4 className="center">{weather.weather[0]?.description}</h4>
+						{/* <h4 className="center">
+							{weather.weather[0].description && weather.weather[0].description}
+						</h4> */}
 
-						{/* <h4 className="center">${weather.weather[0]?.description}</h4> */}
+						<h4 className="center">
+							{description ? description[0].main : 'loading'}
+						</h4>
 					</div>
 					<div className="center">
 						<p>
@@ -77,7 +82,7 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 							{humidity} {pressure}
 						</p>
 						<p className="center">
-							Winds {degree} {wind.toFixed(0)}
+							Winds {degree} {wind?.toFixed(0)} mph
 						</p>
 					</div>
 				</div>

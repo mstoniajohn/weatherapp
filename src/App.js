@@ -189,6 +189,7 @@ function App() {
 							weather={weather}
 							wind={weather.wind?.speed}
 							degree={degree}
+							description={weather.weather}
 						/>
 					</div>
 				</div>

@@ -460,17 +460,7 @@ button {
 	padding: 0.75rem 3rem;
 	/* border-color: var(--bg-secondary); */
 	cursor: pointer;
-	margin: 1rem;
-}
-
-button:hover {
-	text-shadow: none;
-	color: #426696;
-	/* -webkit-background-clip: text;
-	-webkit-box-decoration-break: clone; */
-	/* background-clip: text; */
-	cursor: pointer;
-	border: 1px solid #426696;
+	/* margin: 1rem; */
 }
 
 /* .card-list {
