@@ -73,6 +73,9 @@ const Weather = ({ weather, wind, temps, city, degree }) => {
 					</div>
 
 					<div>
+						<p className="hide">
+							{humidity} {pressure}
+						</p>
 						<p className="center">
 							Winds {degree} {wind.toFixed(0)}
 						</p>
