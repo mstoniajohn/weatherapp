@@ -105,7 +105,7 @@ function App() {
 	// };
 
 	const getTime = (lat, lng) => {
-		const timezoneUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TIMEZONE_API_KEY}&format=json&by=position&lat=${lat}&lng=${lng}`;
+		const timezoneUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TIMEZONE_API_KEY}&format=json&by=position&lat=${lat}&lng=${lng}`;
 		fetch(timezoneUrl)
 			.then((res) => res.json())
 			.then((data) => {
