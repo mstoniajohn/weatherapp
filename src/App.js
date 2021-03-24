@@ -29,13 +29,7 @@ function App() {
 	};
 	const bookmarkCity = localStorage.getItem('search') || 'Japan';
 
-	const getWeatherBookmark = (e) => {
-		e.preventDefault();
-		setCity(bookmarkCity);
-	};
-
 	useEffect(() => {
-		console.log(bookmarkCity);
 		document.getElementById('input').focus();
 
 		gsap.from('#sun', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
@@ -113,6 +107,10 @@ function App() {
 	// const speed = (data) => {
 	// 	return Number(data);
 	// };
+	function getWeatherBookmark(e) {
+		e.preventDefault();
+		setCity(bookmarkCity);
+	}
 
 	const getTime = (lat, lng) => {
 		const timezoneUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TIMEZONE_API_KEY}&format=json&by=position&lat=${lat}&lng=${lng}`;
