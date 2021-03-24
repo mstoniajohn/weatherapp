@@ -163,9 +163,9 @@ function App() {
 			<main>
 				<div className="glass">
 					<div className="dashboard">
-						<p className="my-desc">
+						{/* <p className="my-desc">
 							Get ther current weather for any city or country.
-						</p>
+						</p> */}
 
 						<div className="link">
 							<div className="bookmark">
