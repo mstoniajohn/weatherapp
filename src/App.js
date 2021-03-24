@@ -171,9 +171,12 @@ function App() {
 							<div className="bookmark">
 								<p>Previous search</p>
 								<p>
-									<button onClick={getWeatherBookmark} type="button">
+									<span
+										onClick={getWeatherBookmark}
+										style={{ textDecoration: 'underline' }}
+									>
 										{bookmarkCity}
-									</button>
+									</span>
 								</p>
 							</div>
 						</div>
