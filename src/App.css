@@ -319,7 +319,7 @@ main {
 		margin-top: 3rem;
 	}
 	.bookmark {
-		position: absolute;
+		position: relative;
 		bottom: 3%;
 	}
 }
