@@ -7,6 +7,7 @@ import Weather from './components/Weather';
 function App() {
 	// gsap.from('.h1', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
 	// const WeatherLoading = LoadingWeather(Weather);
+
 	const [weather, setWeather] = useState({});
 	const [city, setCity] = useState('New York');
 	const [degree, setDegree] = useState(true);
@@ -23,12 +24,21 @@ function App() {
 	const getSearch = (e) => {
 		e.preventDefault();
 		setCity(search);
+		localStorage.setItem('search', city);
 		setSearch('');
 	};
-	useEffect(() => {
-		gsap.from('#sun', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
+	const bookmarkCity = localStorage.getItem('search') || 'Japan';
 
+	const getWeatherBookmark = (e) => {
+		e.preventDefault();
+		setCity(bookmarkCity);
+	};
+
+	useEffect(() => {
+		console.log(bookmarkCity);
 		document.getElementById('input').focus();
+
+		gsap.from('#sun', { duration: 3, x: 300, opacity: 0, scale: 0.5 });
 
 		const getWeather = async () => {
 			fetch(
@@ -155,25 +165,31 @@ function App() {
 			<main>
 				<div className="glass">
 					<div className="dashboard">
-						<div className="links">
-							<img
-								className=""
-								style={{ width: '30%' }}
-								id="sun"
-								src={process.env.PUBLIC_URL + '/sun.svg'}
-								alt=""
-							/>
+						<p className="my-desc">
+							Get ther current weather for any city or country.
+						</p>
+
+						<div className="link">
+							<div className="bookmark">
+								<p>Previous search</p>
+								<p>
+									<a onClick={getWeatherBookmark} href="#">
+										{bookmarkCity}
+									</a>
+								</p>
+							</div>
 						</div>
-						<div>{weather ? <p>{weather.name}</p> : 'loading'}</div>
+						<p className="my-info">
+							Created by <a href="www.toniaroganti.com">Tonia Roganti</a>
+						</p>
 					</div>
 
 					<div className="games">
 						<div className="form-cards">
-							<h3 className="center" style={{ margin: '0.5rem' }}>
-								Search a city to get the weather.
-							</h3>
-
 							<form onSubmit={getSearch}>
+								<h4 className="center" style={{ margin: '0.5rem' }}>
+									Search your city or country below.
+								</h4>
 								<input
 									id="input"
 									type="text"
@@ -195,6 +211,14 @@ function App() {
 					</div>
 				</div>
 			</main>
+			<div className="moons">
+				<img
+					className=""
+					id="sun"
+					src={process.env.PUBLIC_URL + '/sun.svg'}
+					alt=""
+				/>
+			</div>
 
 			<div className="circle1"></div>
 			<div className="circle2"></div>

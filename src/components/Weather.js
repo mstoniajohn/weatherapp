@@ -24,38 +24,43 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 		<>
 			<div className="cards" id={weather.id}>
 				<div className="card">
-					<h3 className="center">{city} Forecast</h3>
+					<h3
+						className="center"
+						style={{
+							fontWeight: '200',
+							fontSize: '2.2rem',
+							marginBottom: '0.5rem',
+						}}
+					>
+						{city}
+					</h3>
 
 					<div className="center">
-						{/* <h4 className="center">
-							{weather.weather[0].description && weather.weather[0].description}
-						</h4> */}
-
-						<h4 className="center">
-							{description ? description[0].main : 'loading'}
-						</h4>
-						<h1 className="temps">
-							{kelvinToFahrenheit(temp).toFixed(0)} &#730;
-						</h1>
+						<p style={{ fontSize: '1.3rem' }} className="center">
+							{description ? description[0].description : 'loading'}
+						</p>
+						<h3 style={{ fontSize: '3.5rem', fontWeight: '200' }}>
+							{kelvinToFahrenheit(temp).toFixed(0)}&#730;
+						</h3>
 						<div className="grid">
 							<p>
 								<small>High: </small>
 								<span className="temps">
-									{kelvinToFahrenheit(temp_max).toFixed(0)} &#730;{' '}
+									{kelvinToFahrenheit(temp_max).toFixed(0)}&#730;{' '}
 								</span>{' '}
 							</p>
 							<p>
 								{' '}
 								<small>Low: </small>
 								<span className="temps">
-									{kelvinToFahrenheit(temp_min).toFixed(0)} &#730;
+									{kelvinToFahrenheit(temp_min).toFixed(0)}&#730;
 								</span>
 							</p>
 
 							<p>
 								<small>Feels like: </small>
 								<span className="temps">
-									{kelvinToFahrenheit(feels_like).toFixed(0)} &#730;
+									{kelvinToFahrenheit(feels_like).toFixed(0)}&#730;
 								</span>
 							</p>
 						</div>
@@ -71,7 +76,7 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 						<div className="grid">
 							<p>
 								Humidity:
-								<span className="temps"> {humidity}</span>
+								<span className="temps"> {humidity}%</span>
 							</p>
 							<p>
 								{' '}
@@ -81,12 +86,16 @@ const Weather = ({ weather, wind, temps, city, degree, description }) => {
 						</div>
 						<div className="grid">
 							<div className="center">
-								<p>Sunrise</p>
-								<p className="temps">{newSunrise}</p>
+								<p>
+									Sunrise: <br />
+									<span className="temps"> {newSunrise}</span>
+								</p>
 							</div>
 							<div className="center">
-								<p>Sunset</p>
-								<p className="temps">{newSunset}</p>
+								<p>
+									Sunset: <br />
+									<span className="temps"> {newSunset}</span>
+								</p>
 							</div>
 						</div>
 					</div>
