@@ -171,9 +171,9 @@ function App() {
 							<div className="bookmark">
 								<p>Previous search</p>
 								<p>
-									<a onClick={getWeatherBookmark} href="#">
+									<button onClick={getWeatherBookmark} type="button">
 										{bookmarkCity}
-									</a>
+									</button>
 								</p>
 							</div>
 						</div>
